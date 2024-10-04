@@ -30,7 +30,7 @@ function displayStory(story) {
     story.forEach((part, index) => {
         const section = document.createElement("div");
         section.className = "section";
-        section.innerHTML = `<h3>Part ${index + 1}</h3><p>${part}</p>`;
+        section.innerHTML = `<p>${part}</p>`;
         output.appendChild(section);
     });
 
