@@ -1,0 +1,372 @@
+/* Variables */
+:root {
+    --Light-color: #fee3c5;
+    --Dark-color: #660A00;
+    --secondry-color: #b5755b;
+    --transition: all 0.5s ease;
+    --box-shadow: 0px 15px 25px rgb(254, 210, 183);
+    --heading-font: 600;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Some Defaults */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: "Poppins", system-ui;
+    height: auto;
+    background-color: var(--Light-color);
+    overflow: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.section-padding {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.theme-shadow {
+    box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.08);
+}
+
+/* Logo */
+.logo {
+    background-color: var(--Light-color);
+    padding-right: 2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    transform: translateX(-10px);
+}
+
+.logo a {
+    color: var(--Dark-color);
+    font-weight: 600;
+    font-size: 30px;
+    align-content: center;
+    text-decoration: none;
+}
+
+.logo img {
+    transform: translateY(-10%);
+}
+
+/* Back to top */
+#back-to-top {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    bottom: 20px;
+    right: 20px;
+    font-size: 40px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    color: var(--secondry-color);
+    border: 2px solid var(--secondry-color);
+    outline: none;
+    border-radius: 50%;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-property: background-color, color;
+}
+
+.btnEntrance {
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-name: btnEntrance;
+}
+
+@keyframes btnEntrance {
+    from {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.btnExit {
+    animation-duration: 0.25s;
+    animation-fill-mode: both;
+    animation-name: btnExit;
+}
+
+@keyframes btnExit {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+}
+.content {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    max-width: 800px;
+    padding: 25px 40px 10px 40px;
+    margin: 2rem auto;
+    background: rgba(255, 255, 255, 0.11);
+    box-shadow: -1px 4px 20px 0px rgba(0,0,0,0.75);
+}
+.content h1 {
+    color: var(--Dark-color);
+    font-weight: var(--heading-font);
+    font-size: 30px;
+}
+
+.content p {
+    color: var(--secondry-color);
+}
+.content form {
+    padding: 30px 0 0 0; 
+    width: 100%;
+}
+.content form .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 16px 0;
+}
+.content .form-row .input-data {
+    flex: 1;
+    min-width: 45%;
+    margin: 0 10px;
+    padding-bottom: 2rem; /* Adds space below each input */
+    position: relative;
+    z-index: 99;
+}
+.input-data input {
+    width: 100%;
+    height: 35px;
+    padding: 10px;
+    background: rgba(181, 117, 91, 0.188);
+    border: none;
+    border-bottom: 1px solid var(--secondry-color);
+    font-size: 16px;
+    color: var(--Dark-color);
+    outline: none;
+    box-sizing: border-box;
+}
+.input-data label {
+    position: absolute;
+    top: 25%;
+    left: 7px;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: var(--secondry-color);
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+
+/* When input is focused or has a value, move the label up */
+.input-data input:focus ~ label,
+.input-data input:valid ~ label {
+    top: -10px; /* Move the label above the input */
+    left: 5px; /* Keep it aligned with the input */
+    color: var(--Dark-color);
+    font-size: 12px; /* Shrink the label */
+}
+
+/* Add a bottom border highlight on focus */
+.input-data input:focus {
+    border-bottom: 1px solid var(--Dark-color);
+}
+.submit-data {
+    display: flex;
+    justify-content: center;
+    
+}
+.submit-data button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    padding: 10px 20px; /* Add padding for better vertical centering */
+    background-color: var(--Light-color);
+    color: var(--Dark-color);
+    box-shadow: 0px 0px 20px var(--secondry-color);
+    border: 2px solid var(--secondry-color);
+    border-radius: 50px;
+    transition: transform 0.3s ease-in-out;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 0 auto;
+}
+.submit-data .submit-btn:hover {
+    transform: scale(1.1);
+}
+/* Background */
+.sticker-background {
+    position: relative;
+    /* To keep stickers relative to this container */
+    height: 100vh;
+    padding: 20px;
+    overflow: visible;
+}
+
+.sticker-background::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(254, 227, 197, 0.141);
+}
+
+.sticker {
+    position: absolute;
+    z-index: -1;
+    /* Stickers stay behind the content */
+    opacity: 0.9;
+    /* Slight transparency if desired */
+}
+
+.sticker-1 {
+    top: 2%;
+    left: -180px;
+    width: 400px;
+    /* Size of the sticker */
+}
+
+.sticker-2 {
+    top: 5%;
+    left: 75%;
+    width: 120px;
+    /* Size of the sticker */
+}
+
+.sticker-3 {
+    bottom: 20%;
+    left: 2%;
+    width: 80px;
+    /* Size of the sticker */
+}
+
+.sticker-4 {
+    bottom: 35%;
+    right: 5%;
+    width: 220px;
+    /* Size of the sticker */
+}
+
+.sticker-5 {
+    top: 2%;
+    left: 15%;
+    width: 100px;
+    /* Size of the sticker */
+}
+
+.sticker-6 {
+    bottom: 15%;
+    left: 70%;
+    width: 150px;
+    /* Size of the sticker */
+}
+
+.sticker-7 {
+    bottom: 75%;
+    right: -40px;
+    width: 200px;
+    /* Size of the sticker */
+}
+
+.sticker-8 {
+    bottom: 20%;
+    left: 17%;
+    width: 130px;
+    /* Size of the sticker */
+}
+
+/* Mobile adjustments */
+@media (max-width: 470px) {
+    .content {
+        margin: auto 0;
+    }
+}
+@media (max-width: 768px) {
+    .sticker-1 {
+        top: 20px;
+        left: 10px;
+        width: 120px;
+        /* Adjust sticker size for smaller screens */
+        margin-left: 1rem;
+    }
+
+    .sticker-2 {
+        top: 20px;
+        right: 10px;
+        width: 120px;
+        /* Adjust sticker size for smaller screens */
+    }
+
+    .sticker-3 {
+        bottom: 20%;
+        right: 10px;
+        width: 120px;
+        /* Adjust sticker size for smaller screens */
+    }
+
+    .sticker-4 {
+        bottom: 20%;
+        right: 10px;
+        width: 120px;
+        /* Adjust sticker size for smaller screens */
+    }
+
+    .sticker-5 {
+        top: 30%;
+        right: 10px;
+        width: 90px;
+        /* Adjust sticker size for smaller screens */
+    }
+
+    .sticker-6 {
+        bottom: 10%;
+        left: 50%;
+        width: 150px;
+        /* Adjust sticker size for smaller screens */
+    }
+
+    .sticker-7 {
+        top: 2%;
+        left: 40%;
+        width: 80px;
+        /* Adjust sticker size for smaller screens */
+    }
+
+    .sticker-8 {
+        top: 2%;
+        left: 40%;
+        width: 10px;
+        /* Adjust sticker size for smaller screens */
+    }
+
+    .content {
+        padding: 15px;
+        /* Adjust content padding for mobile */
+    }
+}

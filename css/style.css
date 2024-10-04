@@ -1,0 +1,451 @@
+/* Variables */
+:root {
+    --Dark-color: #070812;
+    --Aqua-color: #2f85a2;
+    --secondry-color: #c3907d;
+    --typewriter-speed: 2s;
+    --box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.08);
+    --transition: all 0.5s ease;
+    --heading-font: 600;
+}
+
+/* Some Defaults */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: "Poppins", system-ui;
+    background-color: var(--Dark-color);
+    overflow-x: hidden;
+    /* Prevent horizontal scroll */
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--Aqua-color);
+}
+
+.btn {
+    font-size: 20px;
+    font-weight: 600;
+    padding: 0.25rem 1rem;
+    border: none;
+}
+
+.main-btn,
+.main-btn:hover {
+    background-color: transparent;
+    color: var(--Aqua-color);
+    width: max-content;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.section-padding {
+    margin-top: 140px;
+    margin-bottom: 140px;
+}
+
+.theme-shadow {
+    box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.08);
+}
+
+/* Back to top */
+#back-to-top {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    bottom: 20px;
+    right: 20px;
+    font-size: 40px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    color: #2f85a2;
+    border: 2px solid #2f85a2;
+    outline: none;
+    border-radius: 50%;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-property: background-color, color;
+}
+
+.btnEntrance {
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-name: btnEntrance;
+}
+
+@keyframes btnEntrance {
+    from {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.btnExit {
+    animation-duration: 0.25s;
+    animation-fill-mode: both;
+    animation-name: btnExit;
+}
+
+@keyframes btnExit {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+}
+
+/* Start Navbar */
+.navbar {
+    background-color: rgba(7, 8, 18, 255);
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.5rem;
+    box-shadow: var(--box-shadow);
+}
+
+.navbar .navbar-brand {
+    display: flex;
+    text-align: center;
+}
+
+.navbar .navbar-brand h2 {
+    color: var(--Aqua-color);
+    font-weight: 600;
+    font-size: 30px;
+    align-content: center;
+
+}
+
+.navbar .navbar-brand .logo {
+    transform: translateY(-10%);
+}
+
+.navbar .navbar-toggler {
+    color: white;
+    font-size: 30px;
+}
+
+.navbar .navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+    font-weight: 300;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    transition: color 0.3s ease;
+    /* Smooth transition */
+}
+
+.navbar-nav .nav-link:active,
+.navbar-nav .nav-link:hover {
+    color: var(--Aqua-color);
+}
+
+.navbar-nav .nav-item {
+    width: max-content;
+}
+
+/* End Navbar */
+/* Start Landing */
+#landing {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.546) 70%, var(--Dark-color) 100%), url(../images/bg1.jpg);
+    background-position: center;
+    background-size: cover;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#landing h1 {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+#landing p {
+    max-width: 800px;
+    /* Set a maximum width for the paragraph */
+    margin: 0 auto;
+    /* Center the paragraph */
+    font-size: 18px;
+    /* Adjust font size if needed */
+}
+
+/* End Landing */
+/* Start Overview */
+#overview h1 {
+    color: var(--Aqua-color);
+    font-weight: var(--heading-font);
+}
+
+#overview .question {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#overview .discovery {
+    margin-top: 3rem;
+}
+
+#overview .discovery .method {
+    font-weight: 800;
+}
+
+.reveal-image {
+    filter: brightness(0.7);
+    /* Darken the image slightly */
+    opacity: 0;
+    transform: translateX(100%);
+    /* Move image off-screen to the right */
+    transition: transform 1s ease-out, opacity 1s ease-out;
+    /* Transition for smooth animation */
+}
+
+/* When the image is revealed (on scroll) */
+.reveal.active .reveal-image {
+    opacity: 1;
+    transform: translateX(10%);
+    /* Bring the image back to its original position */
+}
+
+.reveal-text {
+    opacity: 0;
+    transform: translateY(100%);
+    /* Move text off-screen to the left */
+    transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+.reveal.active .reveal-text {
+    opacity: 1;
+    transform: translateY(0);
+    /* Bring text to its original position */
+}
+
+/* End Overview */
+/* Start Features */
+#features h1 {
+    color: var(--Aqua-color);
+    font-weight: var(--heading-font);
+}
+
+#features h2 {
+    color: var(--secondry-color);
+}
+
+#features .quote {
+    font-weight: 200;
+}
+
+#features .box {
+    transition: transform 0.3s ease-in-out;
+    /* Smooth hover effect */
+}
+
+#features .box:hover {
+    transform: scale(1.05);
+}
+
+#features .btn {
+    background-color: var(--secondry-color);
+    color: var(--Dark-color);
+    margin-top: 1rem;
+    box-shadow: 0px 0px 25px var(--secondry-color);
+    transition: transform 0.3s ease-in-out;
+}
+
+#features .btn:hover {
+    transform: scale(1.1);
+}
+
+/* End Features */
+/* Start Vision */
+#vision h1 {
+    color: var(--Aqua-color);
+    font-weight: var(--heading-font);
+}
+
+#vision .vision-text {
+    transform: translateY(20%);
+}
+
+/* End Vision */
+/* Start Mission */
+#mission h1 {
+    color: var(--Aqua-color);
+    font-weight: var(--heading-font);
+}
+
+#mission .approach .method {
+    font-weight: 800;
+}
+
+.mission-text {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+.reveal.active .mission-text {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.mission-image {
+    filter: brightness(0.7);
+    /* Darken the image slightly */
+    opacity: 0;
+    transform: translateX(-100%);
+    /* Move image off-screen to the right */
+    transition: transform 1s ease-out, opacity 1s ease-out;
+    /* Transition for smooth animation */
+}
+
+/* When the image is revealed (on scroll) */
+.reveal.active .mission-image {
+    opacity: 1;
+    transform: translateX(0);
+    transform: translateY(-10%);
+    /* Bring the image back to its original position */
+}
+
+.approach-text {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+.reveal.active .approach-text {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.approach-image {
+    filter: brightness(0.7);
+    /* Darken the image slightly */
+    opacity: 0;
+    transform: translateX(100%);
+    /* Move image off-screen to the right */
+    transition: transform 1s ease-out, opacity 1s ease-out;
+    /* Transition for smooth animation */
+}
+
+/* When the image is revealed (on scroll) */
+.reveal.active .approach-image {
+    opacity: 1;
+    transform: translateX(0);
+    /* Bring the image back to its original position */
+}
+
+/* End Mission */
+/* Start Team */
+#team h1 {
+    color: var(--Aqua-color);
+    font-weight: var(--heading-font);
+}
+
+#team h2 {
+    color: var(--secondry-color);
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#team .row1 p,
+#team .row2 p {
+    font-weight: 200;
+}
+
+#team .wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* Center items horizontally */
+}
+
+#team .box {
+    height: 300px;
+}
+
+/* End Team */
+/* Styles for mobile devices */
+@media (max-width: 768px) {
+    #planets {
+        transform: translateY(-80%);
+        margin-bottom: 0;
+    }
+    #landing {
+        margin-top: 2rem;
+    }
+    body {
+        font-size: 14px;
+        padding: 10px;
+        overflow-x: hidden;
+    }
+    .navbar {
+        width: 100vw;
+        position: fixed;
+        left: 0;
+        right: 0;
+    }
+}
+
+/* Adjust for very small screens */
+@media (max-width: 480px) {
+    #planets {
+        transform: translateY(-40%);
+        margin-bottom: 0;
+    }
+    #landing {
+        padding-top: 5rem;
+    }
+    body {
+        height: auto;
+        font-size: 12px;
+        padding: 5px;
+        overflow-x: hidden;
+    }
+}
+@media (max-width: 400px) {
+    #planets {
+        transform: translateY(-100%);
+        margin-bottom: 0;
+    }
+    #planets .content {
+        width: 100vw;
+        height: auto;
+    }
+    #landing {
+        padding-top: 5rem;
+    }
+    body {
+        height: auto;
+        font-size: 12px;
+        padding: 5px;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+    h1 {
+        font-size: 14px;
+    }
+}

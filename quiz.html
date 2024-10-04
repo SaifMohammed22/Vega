@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Time</title>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/highSchool.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
+    <link rel="icon" href="images/logo-3.png" type="image/png" />
+</head>
+
+<body>
+    <main class="main">
+        <button id="back-to-top"><i class="fa-solid fa-arrow-up"></i></button>
+        <!-- Logo -->
+        <div class="logo sticky-top">
+            <div class="container">
+                <img src="images/logo-3.png" alt="" width="40" />
+                <a href="index.html">Vega</a>
+            </div>
+        </div>
+        <!-- Quiz -->
+        <section id="questions" class="text-white">
+            <div class="quiz-container">
+                <div class="quiz-box">
+                    <h1>Quiz Time</h1>
+                    <div class="quiz-header">
+                        <span>Test Your Exoplanet IQ!</span>
+                        <span class="header-score">Score: 0 / 10</span>
+                    </div>
+                    <h2 class="question-text">
+                        What is the most common method to discover exoplanets?
+                    </h2>
+                    <div class="option-list">
+                        <div class="option">
+                            <span>A. Radial Velocity Method</span>
+                        </div>
+                        <div class="option">
+                            <span>B. Direct Imaging</span>
+                        </div>
+                        <div class="option">
+                            <span>C. Transit Method</span>
+                        </div>
+                        <div class="option">
+                            <span>D. Wobbling Star Technique</span>
+                        </div>
+                    </div>
+                    <div class="quiz-footer">
+                        <span class="question-total">1 of 10 Questions</span>
+                        <a href="" class="btn rounded-pill next-btn">Next</a>
+                    </div>
+                </div>
+                <!-- Results -->
+                <div class="result-box">
+                    <h2>Quiz Result!</h2>
+                    <div class="percentage-container">
+                        <div class="circular-progress">
+                            <div class="inner-circle"></div>
+                            <span class="progress-value">0%</span>
+                        </div>
+                        <span class="score-text">Your Score 0 out of 10</span>
+                    </div>
+                    <!-- Try again -->
+                    <div class="buttons">
+                        <a href="" class="btn rounded-pill tryAgain-btn">Try Again</a>
+                        <a href="highSchool.html" class="btn rounded-pill goHome-btn">Go To Home</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="js/highSchool.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/all.min.js"></script>
+</body>
+
+</html>

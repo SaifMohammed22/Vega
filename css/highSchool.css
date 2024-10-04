@@ -1,0 +1,586 @@
+/* Variables */
+:root {
+    --Dark-color: #291239;
+    --light-color: #DCC3E9;
+    --secondry-color: #d487f8;
+    --transition: all 0.5s ease;
+    --box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.08);
+    --heading-font: 600;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Some Defaults */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: "Poppins", system-ui;
+    height: auto;
+    background-color: var(--Dark-color);
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.section-padding {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.theme-shadow {
+    box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.08);
+}
+
+/* Logo */
+.logo {
+    background-color: var(--Dark-color);
+    padding-right: 2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+}
+
+.logo a {
+    color: var(--light-color);
+    font-weight: 600;
+    font-size: 30px;
+    align-content: center;
+    text-decoration: none;
+}
+
+.logo img {
+    transform: translateY(-10%);
+}
+
+/* Back to top */
+#back-to-top {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    bottom: 20px;
+    right: 20px;
+    font-size: 40px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    color: var(--secondry-color);
+    border: 2px solid var(--secondry-color);
+    outline: none;
+    border-radius: 50%;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-property: background-color, color;
+}
+
+.btnEntrance {
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-name: btnEntrance;
+}
+
+@keyframes btnEntrance {
+    from {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.btnExit {
+    animation-duration: 0.25s;
+    animation-fill-mode: both;
+    animation-name: btnExit;
+}
+
+@keyframes btnExit {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+}
+
+/* Start Landing */
+/* Background video */
+#e-book .background-video {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+@media (min-aspect-ratio:16/9) {
+    .background-video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio:16/9) {
+    .background-video {
+        width: auto;
+        height: 100%;
+    }
+}
+
+#landing {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Dark Overlay */
+#landing::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.355) 0%, #052430 100%);
+    /* Adjust the opacity for darkness */
+    z-index: 0;
+    /* Place it below the text content but above the video */
+}
+
+#landing .container {
+    z-index: 1;
+}
+
+/* End Landing */
+
+/* Start Intro */
+/* Background video */
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    /* Behind everything */
+}
+
+/* Handle aspect ratios */
+@media (min-aspect-ratio: 16/9) {
+    .background-video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .background-video {
+        width: auto;
+        height: 100%;
+    }
+}
+
+/* Section that holds the content and video */
+#e-book {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    /* Above the video */
+    min-height: 100vh;
+}
+
+/* Dark Overlay for better contrast */
+#e-book::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55) 0%, var(--Dark-color) 100%);
+    z-index: 0;
+    /* Behind the content but above the video */
+}
+
+/* Ensure content is above the overlay */
+#e-book .container {
+    position: relative;
+    z-index: 10;
+    /* Above the dark overlay */
+}
+
+/* Headings and text styling */
+#e-book h1 {
+    color: var(--light-color);
+    font-weight: var(--heading-font);
+}
+
+#e-book .method {
+    font-weight: 800;
+}
+
+.text-block {
+    padding-top: 2rem;
+    font-size: 18px;
+    font-weight: 300;
+    color: #fff;
+    /* Ensure text is readable */
+}
+
+/* PDF Container for displaying the embedded PDF */
+
+.pdf {
+    display: flex;                  /* Use flexbox for layout */
+    justify-content: center;        /* Center the content horizontally */
+    align-items: center;            /* Center the content vertically */
+    padding: 20px;                 /* Add some padding around the container */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Soft shadow */
+    max-width: 800px;              /* Maximum width of the container */
+    margin: 0 auto;                /* Center the container on the page */
+}
+.pdf a {
+    text-decoration: none;          /* Remove underline from the link */
+    color: #fff;                   /* Set text color */
+    padding: 10px 20px;            /* Add padding */
+    background-color: var(--secondry-color); /* Button background color */
+    border-radius: 5px;            /* Rounded corners for the button */
+    transition: background-color 0.3s ease; /* Transition for hover effect */
+}
+
+.pdf a:hover {
+    background-color: var(--light-color); /* Change background color on hover */
+}
+.audio-container {
+    text-align: center; /* Centers the audio within the container */
+    margin-top: 10px;
+}
+.text-audio {
+    font-size: 16px;
+    color:var(--light-color);
+}
+audio {
+    display: inline-block; /* Ensures the audio player is treated like an inline element for centering */
+}
+
+
+/* End Intro */
+/* Start Quiz */
+#quiz .section-title h1 {
+    color: var(--light-color);
+    font-weight: var(--heading-font);
+}
+
+#quiz .btn {
+    background-color: var(--secondry-color);
+    color: var(--Dark-color);
+    margin-top: 1.5rem;
+    width: max-content;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 10px 25px;
+    box-shadow: 0px 0px 25px var(--secondry-color);
+    transition: transform 0.3s ease-in-out;
+}
+
+#quiz .btn:hover {
+    transform: scale(1.1);
+}
+
+#questions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.quiz-container {
+    position: relative;
+    width: 600px;
+    height: auto;
+}
+#questions .quiz-box {
+    background: transparent;
+    border: 2px solid var(--secondry-color);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    box-shadow: var(--box-shadow);
+}
+.quiz-box h1 {
+    font-size: 32px;
+    color: var(--light-color);
+    text-align: center;
+    background: linear-gradient(45deg, transparent, var(--secondry-color), transparent);
+    border-radius: 6px;
+}
+
+.quiz-box .quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: 1px solid var(--secondry-color);
+}
+
+.quiz-header span {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.quiz-header .header-score {
+    padding: 5px;
+}
+
+.quiz-box .question-text {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+.option-list .option {
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 3px;
+    font-size: 16px;
+    margin: 7px 0;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.option-list .option:hover {
+    background: rgba(255, 255, 255, .1);
+    border-color: rgba(255, 255, 255, .1);
+}
+
+.option.selected {
+    border: 2px solid rgba(5, 249, 25, 0.705);
+    color: rgba(5, 249, 25, 0.705);
+}
+.option.correct {
+    border: 2px solid rgba(5, 249, 25, 0.705);
+    color: rgba(5, 249, 25, 0.705);
+}
+.option.wrong {
+    border: 2px solid rgba(255, 0, 0, 0.705);
+    color: rgba(255, 0, 0, 0.705);
+}
+.option.disabled {
+    pointer-events: none;
+    opacity: 0.6;
+}
+.quiz-box .quiz-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.quiz-footer .question-total {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#questions .next-btn {
+    background-color: var(--secondry-color);
+    color: var(--Dark-color);
+    width: max-content;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 7px 25px;
+    box-shadow: 0px 0px 20px var(--secondry-color);
+    transition: transform 0.3s ease-in-out;
+}
+
+#questions .next-btn:hover {
+    transform: scale(1.1);
+}
+/* Results */
+#questions .result-box {
+    width: 500px;
+    border: 2px solid var(--secondry-color);
+    border-radius: 6px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 2s ease, visibility 2s ease, top 2s ease, left 2s ease;
+    box-shadow: var(--box-shadow);
+}
+
+/* Show result box when active */
+#questions .quiz-box.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+#questions .result-box.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.result-box h2 {
+    font-size: 48px;
+}
+.result-box .percentage-container {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0 40px;
+}
+.percentage-container .circular-progress {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background: conic-gradient(var(--secondry-color) 3.6deg, rgba(255, 255, 255, .1) 0deg);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.percentage-container .circular-progress::before {
+    content: '';
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    background: var(--Dark-color);
+    border-radius: 50%;
+}
+.circular-progress .progress-value {
+    position: relative;
+    font-size: 36px;
+    font-weight: 600;
+}
+.percentage-container .score-text {
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+#questions .buttons a {
+    margin: 0 25px 25px;
+    background-color: var(--secondry-color);
+    color: var(--Dark-color);
+    width: max-content;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 10px 25px;
+    box-shadow: 0px 0px 20px var(--secondry-color);
+    transition: transform 0.3s ease-in-out;
+}
+#questions .buttons a:hover {
+    transform: scale(1.1);
+}
+
+/* End Quiz */
+/* Styles for mobile devices */
+@media (max-width: 768px) {
+    #landing {
+        margin-top: 2rem;
+    }
+    body {
+        font-size: 14px;
+        padding: 10px;
+        overflow-x: hidden;
+    }
+    .e-book {
+        margin-top: 2rem;
+    }
+    .logo {
+        width: 100vw;
+        position: fixed;
+        left: 0;
+        right: 0;
+    }
+    h1 {
+        margin-top: 2rem;
+    }
+    .quiz-box {
+        margin: 7rem auto;
+        width: 400px;
+    }
+    .result-box {
+        margin: 0;
+        width: 100%;
+        overflow: hidden;
+    }
+}
+
+/* Adjust for very small screens */
+@media (max-width: 480px) {
+    #landing {
+        padding-top: 5rem;
+    }
+    body {
+        height: auto;
+        font-size: 12px;
+        padding: 5px;
+        overflow-x: hidden;
+    }
+    h1 {
+        margin-top: 2rem;
+    }
+    .quiz-box {
+        margin: 7rem auto;
+    }
+    .result-box {
+        margin: 0;
+        width: 100%;
+        overflow: hidden;
+    }
+}
+@media (max-width: 400px) {
+    #planets .content {
+        width: 100vw;
+        height: auto;
+    }
+    #landing {
+        padding-top: 5rem;
+    }
+    body {
+        height: auto;
+        font-size: 12px;
+        padding: 5px;
+        overflow-x: hidden;
+    }
+    h1 {
+        margin-top: 2rem;
+        font-size: 14px;
+    }
+    .quiz-box {
+        margin: 7rem auto;
+    }
+    .result-box {
+        margin: 0;
+        width: 100%;
+        overflow: hidden;
+    }
+}

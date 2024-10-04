@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>College</title>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/college.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
+    <link rel="icon" href="images/logo-2.png" type="image/png" />
+</head>
+
+<body>
+    <button id="back-to-top"><i class="fa-solid fa-arrow-up"></i></button>
+    <!-- Logo -->
+    <div class="logo sticky-top">
+        <div class="container">
+            <img src="images/logo-2.png" alt="" width="40" />
+            <a href="index.html">Vega</a>
+        </div>
+    </div>
+    <!-- /Landing -->
+    <section id="landing" class="min-vh-100 d-flex align-items-center">
+        <video autoplay loop muted plays-inline class="background-video">
+            <source src="images/background-video.mp4" type="video/mp4" />
+        </video>
+        <div class="container">
+            <div class="row">
+                <div class="col-8">
+                    <h1 class="text-white fx-semibold display-3">
+                        Discover the Science of Exoplanets
+                    </h1>
+                    <p class="text-white mt-3 mb-5">
+                        "Explore data, research, and insights to deepen your understanding
+                        of distant worlds. Unlock the mysteries of exoplanets through
+                        interactive tools and scientific articles."
+                    </p>
+                    <a class="button" href="#planets">Start Exploring</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview -->
+    <section id="overview" class="section-padding reveal">
+        <div class="container">
+            <div class="discovery-years mt-5 mb-5">
+                <div class="col-12">
+                    <h1 class="mb-3">Charting the Rise of Exoplanet Findings</h1>
+                </div>
+                <p class="fs-6 mb-5 text-white">
+                    Exoplanets, or planets beyond our solar system, have become one of
+                    the most exciting fields in astronomy since the first discovery in
+                    1992. That year marked the identification of the first exoplanet,
+                    signaling the start of a new era in our understanding of the
+                    universe. In 2016, the year saw the peak of exoplanet findings.
+                    Interestingly, the discovery rate jumped notably in 2014 before
+                    returning to a steadier pace and reaching its highest record in
+                    2016.
+                </p>
+                <img class="years-graph" src="images/graphs/years-graph.png" alt="Exoplanet Discovery Graph"
+                    width="800" />
+            </div>
+            <div class="discovery-methods mt-5 mb-5">
+                <div class="col-12">
+                    <h1 class="mb-3">Charting the Rise of Exoplanet Findings</h1>
+                </div>
+                <p class="fs-6 mb-5 text-white">
+                    When it comes to the techniques used to find these distant
+                    worlds,<span class="method"> The Transit Method</span> stands out as
+                    the most commonly employed. This method, which involves detecting a
+                    planet as it passes in front of its host star, has significantly
+                    contributed to the number of discoveries over the years. In
+                    contrast,<span class="method"> The Radial Velocity Method</span>,
+                    though used less frequently, has been applied steadily across
+                    various years.
+                </p>
+            </div>
+            <div class="facilities mt-5 mb-5">
+                <div class="col-12">
+                    <h1 class="mb-3">Pioneering Facilities in Exoplanet Discovery</h1>
+                </div>
+                <p class="fs-6 mb-5 text-white">
+                    The role of observation facilities has been crucial in advancing
+                    exoplanet research. <span class="method">Kepler</span>, for
+                    instance, is responsible for discovering an impressive 2,773
+                    exoplanets, more than any other facility. The
+                    <span class="method">The Arecibo Observatory</span>, however, holds
+                    the distinction of discovering the very first exoplanet, marking a
+                    historic milestone in space exploration.
+                </p>
+                <img class="facilities-graph" src="images/graphs/facilities-graph.png" alt="Exoplanet Discovery Graph"
+                    width="800" />
+            </div>
+            <p class="fs-6 text-white mt-5">
+                Now you have know more about exoplanets, What about discovering some
+                of them.
+            </p>
+        </div>
+    </section>
+
+    <!-- Planets -->
+    <section id="planets">
+        <section id="title">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <div class="section-title">
+                            <h1 class="display-3 mt-5 mb-2">Choose your Journey</h1>
+                            <div class="line"></div>
+                            <p class="text-white mt-3">
+                                "Unlock the secrets of distant worlds with a single click."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="collection">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    
+                    <div class="content swiper-slide">
+                        <img src="images/planets/coconuts-2b.png" alt="" width="250" />
+                        <div class="text-content">
+                            <h2>COCONUTS-2b</h2>
+                            <p class="mx-3">
+                                A planet with the longest orbital period around a single star.
+                            </p>
+                            <a href="planets-pages/coconuts.html">
+                                <button class="read-more">Read more</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="content swiper-slide">
+                        <img src="images/planets/psr.png" alt="" width="250" />
+                        <div class="text-content">
+                            <h2>PSR B1257+12 c</h2>
+                            <p class="mx-3">
+                                One of the first exoplanets discovered, orbiting a pulsar.
+                            </p>
+                            <a href="planets-pages/PSR-b1257+12..html">
+                                <button class="read-more">Read more</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="content swiper-slide">
+                        <img src="images/planets/TRAPPIST-1e.png" alt="" width="250" />
+                        <div class="text-content">
+                            <h2>TRAPPIST-1e</h2>
+                            <p class="mx-2">
+                                A potentially habitable Earth-sized exoplanet in the
+                                TRAPPIST-1 system.
+                            </p>
+                            <a href="planets-pages/trappist.html">
+                                <button class="read-more">Read more</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="content swiper-slide">
+                        <img src="images/planets/cancri.png" alt="" width="250" />
+                        <div class="text-content">
+                            <h2>55 Cancri e</h2>
+                            <p class="mx-2">
+                                A super-Earth known for its extreme heat and potential
+                                volcanic activity.
+                            </p>
+                            <a href="planets-pages/55-cancri.html">
+                                <button class="read-more">Read more</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="content swiper-slide">
+                        <img class="mx-4" src="images/planets/Proxima_Centauri_b.png" alt="" width="200" />
+                        <div class="text-content">
+                            <h2>Proxima Cen b</h2>
+                            <p class="mx-4">The closest known exoplanet to Earth.</p>
+                            <a href="planets-pages/proxima.html">
+                                <button class="read-more">Read more</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+    <!-- Transition Animation  -->
+    <script type="text/javascript">
+        window.addEventListener("scroll", function () {
+            // Select all sections you want to apply the effect to, e.g. sections with the class 'reveal'
+            var sections = document.querySelectorAll(".reveal");
+
+            // Loop through each section
+            sections.forEach(function (section) {
+                var screenHeight = window.innerHeight;
+                var sectionPosition = section.getBoundingClientRect().top;
+                var revealpoint = 100;
+
+                // When the section is 100px from the bottom of the screen, trigger the animation
+                if (sectionPosition < screenHeight - revealpoint) {
+                    section.classList.add("active");
+                } else {
+                    section.classList.remove("active");
+                }
+            });
+        });
+    </script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/college.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/all.min.js"></script>
+</body>
+
+</html>

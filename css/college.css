@@ -1,0 +1,319 @@
+/* Variables */
+:root {
+    --Dark-color: #052430;
+    --light-color: #E0C6BD;
+    --secondry-color: #A3FFFF;
+    --transition: all 0.5s ease;
+    --box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.08);
+    --heading-font: 600;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Some Defaults */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: "Poppins", system-ui;
+    height: auto;
+    background-color: var(--Dark-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.section-padding {
+    margin-top: 140px;
+    margin-bottom: 140px;
+}
+
+.theme-shadow {
+    box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.08);
+}
+
+/* Logo */
+.logo {
+    background-color: #052430;
+    padding-right: 2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+}
+
+.logo a {
+    color: #E0C6BD;
+    font-weight: 600;
+    font-size: 30px;
+    align-content: center;
+    text-decoration: none;
+}
+
+.logo img {
+    transform: translateY(-10%);
+}
+
+/* Back to top */
+#back-to-top {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    bottom: 20px;
+    right: 20px;
+    font-size: 40px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    color: #E0C6BD;
+    border: 2px solid #E0C6BD;
+    outline: none;
+    border-radius: 50%;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-property: background-color, color;
+}
+
+.btnEntrance {
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-name: btnEntrance;
+}
+
+@keyframes btnEntrance {
+    from {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.btnExit {
+    animation-duration: 0.25s;
+    animation-fill-mode: both;
+    animation-name: btnExit;
+}
+
+@keyframes btnExit {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+}
+
+/* Start Landing */
+/* Background video */
+.background-video {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+@media (min-aspect-ratio:16/9) {
+    .background-video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio:16/9) {
+    .background-video {
+        width: auto;
+        height: 100%;
+    }
+}
+
+#landing {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Dark Overlay */
+#landing::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.355) 0%, #052430 100%);
+    /* Adjust the opacity for darkness */
+    z-index: 0;
+    /* Place it below the text content but above the video */
+}
+
+#landing .container {
+    z-index: 1;
+}
+
+#landing h1 {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+#landing p {
+    max-width: 800px;
+    /* Set a maximum width for the paragraph */
+    margin: 0 auto;
+    /* Center the paragraph */
+    font-size: 18px;
+    /* Adjust font size if needed */
+}
+
+#landing a {
+    text-decoration: none;
+    background-color: var(--light-color);
+    color: var(--Dark-color);
+    box-shadow: 0px 0px 25px var(--light-color);
+    font-size: 20px;
+    font-weight: 600;
+    border: 2px solid #E0C6BD;
+    padding: 15px 25px;
+    border-radius: 50px;
+    transition: transform 0.3s ease-in-out;
+    margin-top: 1rem;
+}
+
+#landing a:hover {
+    transform: scale(1.1);
+}
+
+/* End Landing */
+/* Start Intro */
+#overview h1 {
+    color: var(--light-color);
+    font-weight: var(--heading-font);
+}
+
+#overview img {
+    display: block;
+    /* Ensures the image behaves like a block element */
+    margin: 20px auto 0;
+    /* Adds space above the image and centers it */
+    max-width: 100%;
+    /* Ensures the image does not overflow the container */
+    height: auto;
+    /* Maintains the aspect ratio */
+}
+
+#overview .method {
+    font-weight: 800;
+}
+
+/* End Intro */
+/* Start Planets */
+#planets {
+    transform: translateY(-10%);
+}
+
+#title h1 {
+    color: var(--light-color);
+    font-weight: var(--heading-font);
+}
+
+.collection {
+    height: auto;
+    background-color: var(--Dark-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 100px;
+}
+
+.collection .content {
+    padding: 1rem;
+    height: 20rem;
+    width: auto;
+    background-color: rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+
+}
+
+.content img {
+    width: 300;
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.text-content h2 {
+    color: #E0C6BD;
+    font-size: 1.7rem;
+    font-weight: var(--heading-font);
+}
+
+.text-content p {
+    color: white;
+    max-width: 22rem;
+    font-size: .9rem;
+    text-align: center;
+}
+
+.read-more {
+    background-color: var(--light-color);
+    color: var(--Dark-color);
+    box-shadow: 0px 0px 20px var(--light-color);
+    width: max-content;
+    font-size: 20px;
+    font-weight: 600;
+    border: 2px solid #E0C6BD;
+    padding: 10px;
+    border-radius: 50px;
+    transition: transform 0.3s ease-in-out;
+    margin-top: 1rem;
+}
+
+.read-more:hover {
+    transform: scale(1.1);
+}
+
+/* Ensure the swiper container and wrapper have defined heights */
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: auto;
+    /* Allows flexible width */
+}
+
+/* End Planets */

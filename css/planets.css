@@ -1,0 +1,201 @@
+/* Variables */
+:root {
+    --Dark-color: #052430;
+    --light-color: #E0C6BD;
+    --secondry-color: #A3FFFF;
+    --transition: all 0.5s ease;
+    --box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.08);
+    --heading-font: 600;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Some Defaults */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: "Poppins", system-ui;
+    height: 100vh;
+    background-color: var(--Dark-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.section-padding {
+    margin-top: 140px;
+    margin-bottom: 140px;
+}
+
+.theme-shadow {
+    box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.08);
+}
+
+/* Logo */
+.logo {
+    width: 100%;
+    background-color: #052430;
+    padding-right: 2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    position: fixed;
+    top: 0;
+    /* Add this line to specify the top offset */
+    left: 0;
+    z-index: 1000;
+    /* Add this line to ensure it stays above other content */
+}
+
+.logo a {
+    color: #E0C6BD;
+    font-weight: 600;
+    font-size: 30px;
+    align-content: center;
+    text-decoration: none;
+}
+
+.logo img {
+    transform: translateY(-10%);
+}
+
+/* Back to top */
+#back-to-top {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    bottom: 20px;
+    right: 20px;
+    font-size: 40px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    color: #E0C6BD;
+    border: 2px solid #E0C6BD;
+    outline: none;
+    border-radius: 50%;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-property: background-color, color;
+}
+
+.btnEntrance {
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-name: btnEntrance;
+}
+
+@keyframes btnEntrance {
+    from {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.btnExit {
+    animation-duration: 0.25s;
+    animation-fill-mode: both;
+    animation-name: btnExit;
+}
+
+@keyframes btnExit {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+}
+
+#overview h1 {
+    color: var(--light-color);
+    font-weight: var(--heading-font);
+}
+
+#overview h2 {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--light-color);
+}
+
+#overview img {
+    display: block;
+    /* Ensures the image behaves like a block element */
+    margin: 20px auto 0;
+    /* Adds space above the image and centers it */
+    max-width: 100%;
+    /* Ensures the image does not overflow the container */
+    height: auto;
+    /* Maintains the aspect ratio */
+}
+
+#overview .method {
+    font-weight: 800;
+}
+
+.earth-cancri img {
+    transform: translateY(-5%)
+}
+
+.jupiter-cancri img {
+    transform: translateY(30%)
+}
+
+.jupiter-coconuts img {
+    transform: translateY(20%);
+}
+
+.earth-psr img {
+    transform: translateY(20%);
+}
+
+.jupiter-psr img {
+    transform: translateY(20%);
+}
+
+.conclusion-psr img {
+    transform: translateY(-10%);
+}
+
+.jupiter-trappist img {
+    transform: translateY(20%);
+}
+
+.earth-proxima img {
+    transform: translateY(25%);
+}
+
+/* Back button */
+.back {
+    background-color: var(--light-color);
+    color: var(--Dark-color);
+    box-shadow: 0px 0px 20px var(--light-color);
+    width: max-content;
+    font-size: 15px;
+    font-weight: 700;
+    border: 2px solid #E0C6BD;
+    padding: 15px;
+    margin: 5rem;
+    border-radius: 50px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.back:hover {
+    transform: scale(1.1);
+}
