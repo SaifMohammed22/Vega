@@ -31,6 +31,7 @@ function displayStory(story) {
         const section = document.createElement("div");
         section.className = "section";
         section.innerHTML = `<p>${part}</p>`;
+        section.style.display = "none"; // Hide all sections initially
         output.appendChild(section);
     });
 
@@ -43,15 +44,15 @@ function manageScroll() {
 
     const showSection = (index) => {
         if (index < sections.length) {
-            sections[index].style.display = "block"; // Show section
+            sections[index].style.display = "block"; // Show the current section
             speakText(sections[index].textContent, () => {
-                if (currentIndex + 1 < sections.length) {
-                    hideSection(index);
-                    currentIndex++;
+                hideSection(index); // Hide current section once reading ends
+                currentIndex++;
+                if (currentIndex < sections.length) {
                     setTimeout(() => {
-                        showSection(currentIndex);
-                        scrollToSection(currentIndex);
-                    }, 500); // Match the fade-out delay
+                        showSection(currentIndex); // Show the next section
+                        scrollToSection(currentIndex); // Scroll to the next section
+                    }, 500); // Delay for smooth transition
                 }
             });
         }
@@ -59,12 +60,11 @@ function manageScroll() {
 
     const hideSection = (index) => {
         if (index >= 0 && index < sections.length) {
-            sections[index].style.display = "none"; // Hide section
+            sections[index].style.display = "none"; // Hide the current section after reading
         }
     };
 
-    showSection(currentIndex);
-    scrollToSection(currentIndex);
+    showSection(currentIndex); // Start with the first section
 }
 
 function scrollToSection(index) {
@@ -96,7 +96,7 @@ function speakText(text, callback) {
     }
 
     responsiveVoice.speak(text, voice, {
-        onend: callback
+        onend: callback // Call the callback function when speaking ends
     });
 }
 
