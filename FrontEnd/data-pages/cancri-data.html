@@ -12,10 +12,10 @@
     <link rel="stylesheet" href="../css/data.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet" />
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=w2dQbauD"></script>
     <link rel="icon" href="../images/logo-4.png" type="image/png" />
+
 </head>
 
 <body>
@@ -45,23 +45,29 @@
                     <h1 class="display-5 mb-2">Design Your Own Space Story!</h1>
                     <p>"Tell us about yourself, and we'll create a space adventure just for you!"</p>
                 </div>
-                <form action="#">
+                <form onsubmit="event.preventDefault(); generateStory('cancri');">
                     <div class="form-row data-entry">
                         <div class="input-data">
-                            <input type="text" required>
+                            <input type="text" id="name" required>
                             <label for="name">Explorer's Name:</label>
                         </div>
                         <div class="input-data">
-                            <input type="text" required>
+                            <input type="text" id="age" required>
                             <label for="age">Explorer’s Age:</label>
                         </div>
                         <div class="input-data">
-                            <input type="text" required>
+                            <input type="text" id="interests" required>
                             <label for="interests">What interests you?</label>
                         </div>
                         <div class="input-data">
-                            <input type="text" required>
-                            <label for="language">Choose your story language.</label>
+                            <select id="language" required>
+                                <option value="">Select a language</option>
+                                <option value="english">English</option>
+                                <option value="spanish">Spanish</option>
+                                <option value="french">French</option>
+                                <option value="german">German</option>
+                                <option value="arabic">Arabic</option>
+                            </select>
                         </div>
                     </div>
                     <div class="form-row submit-data">
@@ -70,6 +76,7 @@
                         </div>
                     </div>
                 </form>
+                <div class="container" id="output" class="story-output"></div>
             </div>
         </div>
     </main>
@@ -78,6 +85,9 @@
     <script src="../js/data.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/all.min.js"></script>
+    <script src="../js/storyGenerator.js">
+      
+    </script>
 </body>
 
 </html>
