@@ -2,9 +2,10 @@ const express=require('express');
 const bodyparser=require('body-parser');
 const dotenv=require('dotenv');
 dotenv.config();
+const key=process.env.key;
 const messageCreator=require('./utilities/Generatemsg');
 const { GoogleGenerativeAI } = require("@google/generative-ai");
-const genAI = new GoogleGenerativeAI("AIzaSyBDp3VMJnZkVXjFxTLQDDN5cjkoP0PL1qI");
+const genAI = new GoogleGenerativeAI(key);
 const mongoose=require('mongoose');
 const cors=require('cors');
 const app=express();
@@ -15,7 +16,6 @@ const port=process.env.port||8080;
 app.post('/story',async(req,res,next)=>{
   try{
     const {name,lang,planet,interests,school}=req.body;
-    console.log(name,lang,planet,interests,school);
     const msg=messageCreator(name,interests,lang,school,planet);
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
     const result = await model.generateContent([msg]);

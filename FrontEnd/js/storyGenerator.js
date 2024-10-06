@@ -4,7 +4,7 @@ async function generateStory(planet) {
     const interests = document.getElementById('interests').value;
     const lang = document.getElementById('language').value;
     try {
-        const response = await fetch('https://story-creator-iy5s.vercel.app/story', {
+        const response = await fetch('https://vega-backend-iota.vercel.app/story', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
