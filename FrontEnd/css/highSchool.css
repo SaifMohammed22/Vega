@@ -240,7 +240,7 @@ img {
 }
 
 .text-block {
-    padding-top: 2rem;
+    padding-top: 1rem;
     font-size: 18px;
     font-weight: 300;
     color: #fff;
@@ -250,38 +250,61 @@ img {
 /* PDF Container for displaying the embedded PDF */
 
 .pdf {
-    display: flex;                  /* Use flexbox for layout */
-    justify-content: center;        /* Center the content horizontally */
-    align-items: center;            /* Center the content vertically */
-    padding: 20px;                 /* Add some padding around the container */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Soft shadow */
-    max-width: 800px;              /* Maximum width of the container */
-    margin: 0 auto;                /* Center the container on the page */
+    display: flex;
+    /* Use flexbox for layout */
+    justify-content: center;
+    /* Center the content horizontally */
+    align-items: center;
+    /* Center the content vertically */
+    padding: 20px;
+    /* Add some padding around the container */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    /* Soft shadow */
+    max-width: 800px;
+    /* Maximum width of the container */
+    margin: 0 auto;
+    /* Center the container on the page */
 }
+
 .pdf a {
-    text-decoration: none;          /* Remove underline from the link */
-    color: #fff;                   /* Set text color */
-    padding: 10px 20px;            /* Add padding */
-    background-color: var(--secondry-color); /* Button background color */
-    border-radius: 5px;            /* Rounded corners for the button */
-    transition: background-color 0.3s ease; /* Transition for hover effect */
+    text-decoration: none;
+    /* Remove underline from the link */
+    color: #fff;
+    /* Set text color */
+    padding: 10px 20px;
+    /* Add padding */
+    background-color: var(--secondry-color);
+    /* Button background color */
+    border-radius: 5px;
+    /* Rounded corners for the button */
+    transition: background-color 0.3s ease;
+    /* Transition for hover effect */
 }
 
 .pdf a:hover {
-    background-color: var(--light-color); /* Change background color on hover */
-}
-.audio-container {
-    text-align: center; /* Centers the audio within the container */
-    margin-top: 10px;
-}
-.text-audio {
-    font-size: 16px;
-    color:var(--light-color);
-}
-audio {
-    display: inline-block; /* Ensures the audio player is treated like an inline element for centering */
+    background-color: var(--light-color);
+    /* Change background color on hover */
 }
 
+.audio-container {
+    text-align: center;
+    /* Centers the audio within the container */
+    margin-top: 10px;
+}
+
+.text-audio {
+    font-size: 16px;
+    color: var(--light-color);
+}
+
+audio {
+    display: inline-block;
+    /* Ensures the audio player is treated like an inline element for centering */
+}
+
+.pdf-container {
+    padding-top: 2rem;
+}
 
 /* End Intro */
 /* Start Quiz */
@@ -313,11 +336,13 @@ audio {
     padding-top: 10px;
     padding-bottom: 10px;
 }
+
 .quiz-container {
     position: relative;
     width: 600px;
     height: auto;
 }
+
 #questions .quiz-box {
     background: transparent;
     border: 2px solid var(--secondry-color);
@@ -328,6 +353,7 @@ audio {
     transition: opacity 0.5s ease, visibility 0.5s ease;
     box-shadow: var(--box-shadow);
 }
+
 .quiz-box h1 {
     font-size: 32px;
     color: var(--light-color);
@@ -380,18 +406,22 @@ audio {
     border: 2px solid rgba(5, 249, 25, 0.705);
     color: rgba(5, 249, 25, 0.705);
 }
+
 .option.correct {
     border: 2px solid rgba(5, 249, 25, 0.705);
     color: rgba(5, 249, 25, 0.705);
 }
+
 .option.wrong {
     border: 2px solid rgba(255, 0, 0, 0.705);
     color: rgba(255, 0, 0, 0.705);
 }
+
 .option.disabled {
     pointer-events: none;
     opacity: 0.6;
 }
+
 .quiz-box .quiz-footer {
     display: flex;
     justify-content: space-between;
@@ -418,6 +448,7 @@ audio {
 #questions .next-btn:hover {
     transform: scale(1.1);
 }
+
 /* Results */
 #questions .result-box {
     width: 500px;
@@ -442,6 +473,7 @@ audio {
     opacity: 0;
     visibility: hidden;
 }
+
 #questions .result-box.active {
     opacity: 1;
     visibility: visible;
@@ -450,6 +482,7 @@ audio {
 .result-box h2 {
     font-size: 48px;
 }
+
 .result-box .percentage-container {
     width: 300px;
     display: flex;
@@ -457,6 +490,7 @@ audio {
     align-items: center;
     margin: 20px 0 40px;
 }
+
 .percentage-container .circular-progress {
     position: relative;
     width: 200px;
@@ -467,6 +501,7 @@ audio {
     justify-content: center;
     align-items: center;
 }
+
 .percentage-container .circular-progress::before {
     content: '';
     position: absolute;
@@ -475,16 +510,19 @@ audio {
     background: var(--Dark-color);
     border-radius: 50%;
 }
+
 .circular-progress .progress-value {
     position: relative;
     font-size: 36px;
     font-weight: 600;
 }
+
 .percentage-container .score-text {
     font-size: 22px;
     font-weight: 600;
     margin-top: 20px;
 }
+
 #questions .buttons a {
     margin: 0 25px 25px;
     background-color: var(--secondry-color);
@@ -496,6 +534,7 @@ audio {
     box-shadow: 0px 0px 20px var(--secondry-color);
     transition: transform 0.3s ease-in-out;
 }
+
 #questions .buttons a:hover {
     transform: scale(1.1);
 }
@@ -506,27 +545,33 @@ audio {
     #landing {
         margin-top: 2rem;
     }
+
     body {
         font-size: 14px;
         padding: 10px;
         overflow-x: hidden;
     }
+
     .e-book {
         margin-top: 2rem;
     }
+
     .logo {
         width: 100vw;
         position: fixed;
         left: 0;
         right: 0;
     }
+
     h1 {
         margin-top: 2rem;
     }
+
     .quiz-box {
         margin: 7rem auto;
         width: 400px;
     }
+
     .result-box {
         margin: 0;
         width: 100%;
@@ -539,45 +584,55 @@ audio {
     #landing {
         padding-top: 5rem;
     }
+
     body {
         height: auto;
         font-size: 12px;
         padding: 5px;
         overflow-x: hidden;
     }
+
     h1 {
         margin-top: 2rem;
     }
+
     .quiz-box {
         margin: 7rem auto;
     }
+
     .result-box {
         margin: 0;
         width: 100%;
         overflow: hidden;
     }
 }
+
 @media (max-width: 400px) {
     #planets .content {
         width: 100vw;
         height: auto;
     }
+
     #landing {
         padding-top: 5rem;
     }
+
     body {
         height: auto;
         font-size: 12px;
         padding: 5px;
         overflow-x: hidden;
     }
+
     h1 {
         margin-top: 2rem;
         font-size: 14px;
     }
+
     .quiz-box {
         margin: 7rem auto;
     }
+
     .result-box {
         margin: 0;
         width: 100%;
