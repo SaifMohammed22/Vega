@@ -1,0 +1,56 @@
+
+Kids' Space Adventure!
+Version: 1.0
+Author: GSD
+Last Updated: [October 2024]
+
+Welcome to the "Kids' Space Adventure!" – a fun and interactive space exploration game for kids, where they can launch rockets, travel through the solar system, and dodge asteroids. This game is built using Pygame.
+
+Table of Contents
+- Requirements
+- Installation
+- Running the Game
+- Game Instructions
+- Folder Structure
+- Credits
+
+Requirements
+To run this game, you need the following:
+- Python 3.x
+- Pygame (installed via requirements.txt)
+
+Installation
+1. Clone the repository or download the game files:
+    git clone <https://github.com/Salmaa-Ali/Vega.git>
+
+2. Install the dependencies listed in the requirements.txt file:
+    pip install -r requirements.txt
+
+3. Check the folder structure to ensure everything is set up correctly.
+
+Running the Game
+1. Open your terminal (or command prompt).
+2. Navigate to the directory where the game files are located.
+3. Run the game.py file to start the game:
+    python game.py
+
+Game Instructions
+Objective:
+- Control your rocket and travel through space while dodging asteroids and navigating through planets.
+- Try to survive as long as possible!
+
+Controls:
+- Arrow Keys: Use the arrow keys to move your rocket left, right, up, and down.
+- Space Bar: Launch your rocket at the start of the game.
+- Escape Key: Exit the game.
+
+Gameplay:
+- Avoid incoming asteroids by moving your rocket.
+- You will encounter different planets as you travel, offering points or challenges.
+- The game gets progressively harder as you move deeper into space.
+
+
+Credits
+- Game Development: GSD
+- Powered By: Python & Pygame
+- Images: Images are sourced or created specifically for this game. If using third-party assets, please ensure appropriate licenses are followed.
