@@ -117,6 +117,7 @@ img {
         transform: scale3d(0.3, 0.3, 0.3);
     }
 }
+
 .content {
     z-index: 2;
     display: flex;
@@ -128,8 +129,9 @@ img {
     padding: 25px 40px 10px 40px;
     margin: 2rem auto;
     background: rgba(255, 255, 255, 0.11);
-    box-shadow: -1px 4px 20px 0px rgba(0,0,0,0.75);
+    box-shadow: -1px 4px 20px 0px rgba(0, 0, 0, 0.75);
 }
+
 .content h1 {
     color: var(--Dark-color);
     font-weight: var(--heading-font);
@@ -139,24 +141,29 @@ img {
 .content p {
     color: var(--secondry-color);
 }
+
 .content form {
-    padding: 30px 0 0 0; 
+    padding: 30px 0 0 0;
     width: 100%;
 }
+
 .content form .form-row {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     margin: 16px 0;
 }
+
 .content .form-row .input-data {
     flex: 1;
     min-width: 45%;
     margin: 0 10px;
-    padding-bottom: 2rem; /* Adds space below each input */
+    padding-bottom: 2rem;
+    /* Adds space below each input */
     position: relative;
     z-index: 99;
 }
+
 .input-data input {
     width: 100%;
     height: 35px;
@@ -169,6 +176,7 @@ img {
     outline: none;
     box-sizing: border-box;
 }
+
 .input-data label {
     position: absolute;
     top: 25%;
@@ -181,12 +189,15 @@ img {
 }
 
 /* When input is focused or has a value, move the label up */
-.input-data input:focus ~ label,
-.input-data input:valid ~ label {
-    top: -10px; /* Move the label above the input */
-    left: 5px; /* Keep it aligned with the input */
+.input-data input:focus~label,
+.input-data input:valid~label {
+    top: -10px;
+    /* Move the label above the input */
+    left: 5px;
+    /* Keep it aligned with the input */
     color: var(--Dark-color);
-    font-size: 12px; /* Shrink the label */
+    font-size: 12px;
+    /* Shrink the label */
 }
 
 
@@ -205,34 +216,44 @@ img {
     outline: none;
     box-sizing: border-box;
 }
+
 /* Change background color when the input field has valid data (i.e., when data is entered) */
 .input-data input:valid {
-    background-color: var(--secondry-color); /* Light blue color for valid input */
+    background-color: var(--secondry-color);
+    /* Light blue color for valid input */
 }
+
 /* Add focus effect */
 .input-data select:focus {
     color: var(--Dark-color);
-    border-color: var(--Dark-color); /* Example: change to your primary color */
+    border-color: var(--Dark-color);
+    /* Example: change to your primary color */
 }
+
 /* Style the placeholder option */
 .input-data select option {
-    color: #888; /* Color for options */
+    color: #888;
+    /* Color for options */
 }
+
 /* Add a bottom border highlight on focus */
 .input-data input:focus {
     border-bottom: 1px solid var(--Dark-color);
 }
+
 .submit-data {
     display: flex;
     justify-content: center;
-    
+
 }
+
 .submit-data button {
     display: flex;
     align-items: center;
     justify-content: center;
     width: auto;
-    padding: 10px 20px; /* Add padding for better vertical centering */
+    padding: 10px 20px;
+    /* Add padding for better vertical centering */
     background-color: var(--Light-color);
     color: var(--Dark-color);
     box-shadow: 0px 0px 20px var(--secondry-color);
@@ -244,9 +265,11 @@ img {
     cursor: pointer;
     margin: 0 auto;
 }
+
 .submit-data .submit-btn:hover {
     transform: scale(1.1);
 }
+
 /* Background */
 .sticker-background {
     position: relative;
@@ -289,7 +312,7 @@ img {
 }
 
 .sticker-3 {
-    bottom: 20%;
+    top: 10%;
     left: 2%;
     width: 80px;
     /* Size of the sticker */
@@ -336,6 +359,7 @@ img {
         margin: auto 0;
     }
 }
+
 @media (max-width: 768px) {
     .sticker-1 {
         top: 20px;
