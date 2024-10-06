@@ -2,6 +2,8 @@
 
 **Vega** is an immersive and educational website designed to introduce users of all ages to the fascinating world of **exoplanets**: planets that orbit stars outside our solar system. Exoplanets offer exciting possibilities for life beyond Earth and help answer the fundamental question, "Are we alone in the universe?" This project targets different audiences, including children, high schoolers, and adults, offering tailored content and interactive elements to ensure an engaging learning experience.
 
+[Vega's Website](https://vega-final.vercel.app/)
+
 ![Main Page](FrontEnd/images/assets/mainpage.png)
 
 ## Table of Contents
