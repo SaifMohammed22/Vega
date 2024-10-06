@@ -284,6 +284,12 @@ img {
         padding: 5px;
         overflow-x: hidden;
     }
+    .logo {
+        width: 100vw;
+        position: fixed;
+        left: 0;
+        right: 0;
+    }
 }
 @media (max-width: 400px) {
     #planets {
@@ -306,5 +312,11 @@ img {
     }
     h1 {
         font-size: 14px;
+    }
+    .logo {
+        width: 100vw;
+        position: fixed;
+        left: 0;
+        right: 0;
     }
 }
