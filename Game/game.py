@@ -19,20 +19,20 @@ pygame.display.set_caption("Kids' Space Adventure!")
 clock = pygame.time.Clock()
 
 # Load and scale images
-rocket_img = pygame.transform.scale(pygame.image.load('images/rocket.png').convert_alpha(), (80, 80))
+rocket_img = pygame.transform.scale(pygame.image.load('Game/images/rocket.png').convert_alpha(), (80, 80))
 planet_imgs = {
-    'Mercury': pygame.transform.scale(pygame.image.load('images/mercury (1).png').convert_alpha(), (40, 40)),
-    'Venus': pygame.transform.scale(pygame.image.load('images/venus.png').convert_alpha(), (50, 50)),
-    'Earth': pygame.transform.scale(pygame.image.load('images/planet-earth.png').convert_alpha(), (50, 50)),
-    'Mars': pygame.transform.scale(pygame.image.load('images/mars.png').convert_alpha(), (45, 45)),
-    'Jupiter': pygame.transform.scale(pygame.image.load('images/jupiter.png').convert_alpha(), (70, 70)),
-    'Saturn': pygame.transform.scale(pygame.image.load('images/saturn.png').convert_alpha(), (60, 60)),
-    'Uranus': pygame.transform.scale(pygame.image.load('images/uranus.png').convert_alpha(), (55, 55)),
-    'Neptune': pygame.transform.scale(pygame.image.load('images/neptune.png').convert_alpha(), (55, 55))
+    'Mercury': pygame.transform.scale(pygame.image.load('Game/images/mercury (1).png').convert_alpha(), (40, 40)),
+    'Venus': pygame.transform.scale(pygame.image.load('Game/images/venus.png').convert_alpha(), (50, 50)),
+    'Earth': pygame.transform.scale(pygame.image.load('Game/images/planet-earth.png').convert_alpha(), (50, 50)),
+    'Mars': pygame.transform.scale(pygame.image.load('Game/images/mars.png').convert_alpha(), (45, 45)),
+    'Jupiter': pygame.transform.scale(pygame.image.load('Game/images/jupiter.png').convert_alpha(), (70, 70)),
+    'Saturn': pygame.transform.scale(pygame.image.load('Game/images/saturn.png').convert_alpha(), (60, 60)),
+    'Uranus': pygame.transform.scale(pygame.image.load('Game/images/uranus.png').convert_alpha(), (55, 55)),
+    'Neptune': pygame.transform.scale(pygame.image.load('Game/images/neptune.png').convert_alpha(), (55, 55))
 }
-asteroid_img = pygame.transform.scale(pygame.image.load('images/asteroid.png').convert_alpha(), (30, 30))
-bullet_img = pygame.transform.scale(pygame.image.load('images/bullet.png').convert_alpha(), (10, 20))
-shield_img = pygame.transform.scale(pygame.image.load('images/defence.png').convert_alpha(), (30, 30))
+asteroid_img = pygame.transform.scale(pygame.image.load('Game/images/asteroid.png').convert_alpha(), (30, 30))
+bullet_img = pygame.transform.scale(pygame.image.load('Game/images/bullet.png').convert_alpha(), (10, 20))
+shield_img = pygame.transform.scale(pygame.image.load('Game/images/defence.png').convert_alpha(), (30, 30))
 
 # Game states and variables
 game_state = 'intro'
@@ -104,7 +104,7 @@ def display_text(text, x, y, font_size=30, color=WHITE):
 
 def draw_intro():
     # Load background image
-    screen.blit(pygame.image.load("images/land.jpg"), (0, 0))
+    screen.blit(pygame.image.load("Game/images/land.jpg"), (0, 0))
 
     # Load a better font
     font_title = pygame.font.Font(pygame.font.match_font('arial'), 40)  # Custom font size for the title
@@ -182,7 +182,7 @@ def update_game():
         draw_intro()
 
     elif game_state == 'rocket_scene':
-        screen.blit(pygame.image.load('images/Space.png'), (0,0))
+        screen.blit(pygame.image.load('Game/images/Space.png'), (0,0))
         draw_game_object(rocket_img, rocket_x, rocket_y)
         display_text(f"Fuel: {fuel:.0f}%", 10, 30)
         display_text(f"Velocity: {velocity:.2f}", 10, 60)
@@ -196,7 +196,7 @@ def update_game():
                 game_state = 'innerSpace'
 
     elif game_state == 'innerSpace':
-        screen.blit(pygame.image.load('images/Stars.png'), (0,0))
+        screen.blit(pygame.image.load('Game/images/Stars.png'), (0,0))
         for planet in inner_planets:
             draw_game_object(planet_imgs[planet['name']], planet['x'] + 20, planet['y'] + 20)
             planet['y'] += 5
@@ -208,7 +208,7 @@ def update_game():
         draw_game_object(rocket_img, rocket_x, HEIGHT - 50)
 
     elif game_state == 'asteroidBelt':
-        screen.blit(pygame.image.load('images/Stars.png'), (0,0))
+        screen.blit(pygame.image.load('Game/images/Stars.png'), (0,0))
         if random.random() < 0.05 + 0.02 * difficulty_level:
             asteroids.append({'x': random.randint(0, WIDTH), 'y': 0})
         
@@ -262,7 +262,7 @@ def update_game():
             game_state = 'outerSpace'
 
     elif game_state == 'outerSpace':
-        screen.blit(pygame.image.load('images/Stars.png'), (0,0))
+        screen.blit(pygame.image.load('Game/images/Stars.png'), (0,0))
         
         for planet in outer_planets:
             draw_game_object(planet_imgs[planet['name']], planet['x'] + 20, planet['y'] + 20)
@@ -281,7 +281,7 @@ def update_game():
             screen.blit(rendered_text, text_rect)
 
         # Load background image
-        screen.blit(pygame.image.load('images/Stars.png'), (0, 0))
+        screen.blit(pygame.image.load('Game/images/Stars.png'), (0, 0))
 
         # Define fonts and colors
         font_large = pygame.font.Font(None, 60)  # You can customize the font file here
@@ -302,7 +302,7 @@ def update_game():
             screen.blit(rendered_text, text_rect)
 
         # Load background image
-        screen.blit(pygame.image.load('images/Stars.png'), (0, 0))
+        screen.blit(pygame.image.load('Game/images/Stars.png'), (0, 0))
 
         # Define fonts and colors
         font_large = pygame.font.Font(None, 60)  # You can customize the font file here
